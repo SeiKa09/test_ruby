@@ -1,0 +1,7 @@
+ <div class="col-md-12">
+  <h2> Detail page </h2>
+  <p>Name: <%= @transaction.amount %></p>
+  <p>Bank: <%= @transaction.transaction_type %></p>
+  <p>Account name: <%= @transaction.account.name %></p>
+  <p><%= link_to "Transactions Page", transactions_path %></p>
+</div>

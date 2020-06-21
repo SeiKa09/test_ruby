@@ -10,9 +10,17 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 4.0'
+
 gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+
+gem 'devise'
+
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

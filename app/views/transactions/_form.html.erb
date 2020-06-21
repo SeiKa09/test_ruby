@@ -1,0 +1,32 @@
+<%= form_for(@transaction) do |form| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% @transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= form.label :amount %><br>
+    <%= form.number_field :amount, min: 0, step: 0.01 %>
+  </p>
+
+  <p>
+    <%= form.label :transaction_type %><br>
+    <%= form.select :transaction_type, [["withdraw", "withdraw"], ["deposit", "deposit"]] %>
+  </p>
+
+  <p>
+    <%= form.label :account %><br>
+    <%= select("transaction", "account_id", Account.all.collect { |p| [ p.name, p.id ] })  %>
+  </p>
+
+  <p>
+    <%= link_to "Cancel", transactions_path, class: 'btn btn-secondary' %>
+    <%= form.submit flag , class: "btn btn-primary" %>
+  </p>
+<% end %>

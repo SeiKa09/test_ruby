@@ -1,0 +1,28 @@
+<div class="col-md-12">
+
+  <h1>Listing Accounts</h1><%= link_to "New Account", new_account_path, :class => "btn btn-primary" %>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Bank</th>
+        <th scope="col" colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @accounts.each do |account| %>
+        <tr>
+          <td><%= account.name %></td>
+          <td><%= account.bank %></td>
+          <td><%= link_to "Show", account %></td>
+          <td><%= link_to "Edit", edit_account_path(account) %></td>
+          <td><%= link_to "Destroy", { action: :destroy, id: account.id }, method: :delete, confirm: "Are you sure?" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Home Page', root_path %>
+
+</div>

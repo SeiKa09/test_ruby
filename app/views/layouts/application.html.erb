@@ -2,14 +2,14 @@
 <html>
   <head>
     <title>RailsCodingChallenge1535</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag :application %>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
 </html>
